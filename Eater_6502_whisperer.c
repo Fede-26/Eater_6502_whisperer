@@ -35,6 +35,13 @@ void read(uint16_t address, uint8_t data)
     // Address is only for printing
     gpio_set_dir_out_masked(DATA_MASK);
     gpio_put_masked(DATA_MASK, data << 17);
+    if (address >= ROM_START && address <= ROM_START + ROM_SIZE)
+        printf("ROM ");
+    else if (address >= RAM_START && address <= RAM_START + RAM_SIZE)
+        printf("RAM ");
+    else
+        printf("INVALID ");
+        
     printf("R | Addr: %016b - %04x | Data: %08b - %02x\n", address, address, data, data);
 }
 
