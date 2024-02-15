@@ -1,6 +1,6 @@
 # Eater_6502 whisperer
 
-This is a eeprom and ram emulator for the pi pico.
+This is an EEPROM and RAM emulator for the pi pico.
 
 It is designed to be used with an fpga emulating the 6502 processor.
 
